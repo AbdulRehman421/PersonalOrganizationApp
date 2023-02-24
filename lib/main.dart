@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'ToDoTask/maintask.dart';
-import 'friends/addfriends.dart';
-import 'friends/friendsdblist.dart';
-
+import 'package:flutter_complete_guide/friends/friendlist.dart';
+import 'Task/mainTask.dart';
+import 'image/mainimage.dart';
 
 void main() => runApp(MyApp());
 
@@ -58,75 +57,14 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
 actions: [InkWell(
     onTap: () {
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => TodosApp()));
+      // Navigator.push(
+      //     context,
+      //     MaterialPageRoute(
+      //         builder: (context) => MyTaskApp()));
     },
     child: Icon(Icons.ac_unit,color: Colors.blue,))],
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            DrawerHeader(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                    colors: [
-                      Colors.green,
-                      Colors.lightBlue
 
-                    ]
-                  )
-                ),
-                child: Image.asset('assets/images/download.png')),
-            ListTile(
-              title:  Text('Add Friends', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,),),
-              tileColor: Colors.greenAccent,
-              onTap: () {
-
-                Navigator.pop(context);
-              },
-            ),
-            Divider(color: Colors.white,
-
-              height: 10,),
-            ListTile(
-              title:  Text('Add Tasks', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,),),
-              tileColor: Colors.greenAccent,
-
-              onTap: () {
-
-                Navigator.pop(context);
-              },
-            ),
-            Divider(color: Colors.white,
-
-              height: 10,),
-            ListTile(
-              title:  Text('Add Events', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,),),
-              tileColor: Colors.greenAccent,
-
-              onTap: () {
-
-                Navigator.pop(context);
-              },
-            ),
-            Divider(color: Colors.white,
-
-            height: 10,),
-            ListTile(
-              title:  Text('Add Images', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,),),
-              tileColor: Colors.greenAccent,
-
-              onTap: () {
-
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -149,21 +87,21 @@ actions: [InkWell(
                     children: [
 
                      Container(
-                       child: Column(
-                         children: [
-                           InkWell(
-                             onTap: () {
-                               Navigator.push(
-                                   context,
-                                   MaterialPageRoute(
-                                       builder: (context) => FriendsListScreen()));
-                             },
-                             child: Icon(Icons.person_add_alt,color: Colors.white,size: 45,),
-                           ),
-                           Text('Add Friends', style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold, fontSize: 20),)
-                         ],
-                         crossAxisAlignment: CrossAxisAlignment.center,
-                         mainAxisAlignment: MainAxisAlignment.center,
+                       child: InkWell(
+                         onTap: () {
+                           Navigator.push(
+                               context,
+                               MaterialPageRoute(
+                                   builder: (context) => FriendDbList()));
+                         },
+                         child: Column(
+                           children: [
+                             Icon(Icons.person_add_alt,color: Colors.white,size: 45,),
+                             Text('Add Friends', style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold, fontSize: 20),)
+                           ],
+                           crossAxisAlignment: CrossAxisAlignment.center,
+                           mainAxisAlignment: MainAxisAlignment.center,
+                         ),
                        ),
                        height: 150,
                        width: 150,
@@ -179,21 +117,21 @@ actions: [InkWell(
                        ),
                      ),
                       Container(
-                        child: Column(
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => TodosApp()));
-                              },
-                              child: Icon(Icons.add_chart,color: Colors.white,size: 45,),
-                            ),
-                            Text('Add Tasks', style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold, fontSize: 20),)
-                          ],
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => MyTaskApp()));
+                          },
+                          child: Column(
+                            children: [
+                              Icon(Icons.add_chart,color: Colors.white,size: 45,),
+                              Text('Add Tasks', style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold, fontSize: 20),)
+                            ],
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                          ),
                         ),
                         height: 150,
                         width: 150,
@@ -245,18 +183,21 @@ actions: [InkWell(
                           ),
                         ),
                         Container(
-                          child: Column(
-                            children: [
-                              InkWell(
-                                onTap: () {
-
-                                },
-                                child: Icon(Icons.add_photo_alternate_outlined,color: Colors.white,size: 45,),
-                              ),
-                              Text('Add Images', style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold, fontSize: 20),)
-                            ],
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => k()));
+                            },
+                            child: Column(
+                              children: [
+                                Icon(Icons.add_photo_alternate_outlined,color: Colors.white,size: 45,),
+                                Text('Add Images', style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold, fontSize: 20),)
+                              ],
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                            ),
                           ),
                           height: 150,
                           width: 150,
@@ -315,10 +256,10 @@ actions: [InkWell(
                   MaterialButton(
                     minWidth: 40,
                     onPressed:() {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => FriendsListScreen()));
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) => FriendsListScreen()));
                     },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -335,7 +276,7 @@ actions: [InkWell(
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => TodosApp()));
+                              builder: (context) => MyTaskApp()));
                     },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
