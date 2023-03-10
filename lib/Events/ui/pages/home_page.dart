@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
       centerTitle: true,
       title: Text('Event App'),
       leading: IconButton(onPressed: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => MyPersonalApp()));
       }, icon: Icon(Icons.arrow_back_ios)),
 
     );

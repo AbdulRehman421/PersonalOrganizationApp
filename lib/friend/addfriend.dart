@@ -73,7 +73,7 @@ class _NewFriendState extends State<NewFriend> {
         leading: IconButton(
           onPressed: () {
             Navigator.pushReplacement(
-                context, MaterialPageRoute(builder: (context) => MyApp()));
+                context, MaterialPageRoute(builder: (context) => MyPersonalApp()));
           },
           icon: const Icon(
             Icons.arrow_back_ios,
@@ -159,7 +159,7 @@ class _NewFriendState extends State<NewFriend> {
                                   color: Colors.blue,
                                   onPressed: (){
                                     _validation();
-                                   Navigator.push(context,MaterialPageRoute(builder: (context) => MyApp()));
+                                   Navigator.push(context,MaterialPageRoute(builder: (context) => MyPersonalApp()));
                                     // Navigator.push(
                                     //     context,
                                     //     MaterialPageRoute(

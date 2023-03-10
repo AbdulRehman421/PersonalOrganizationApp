@@ -40,7 +40,7 @@ class _MyImageAppState extends State<MyImageApp> {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => MyApp()));
+                  builder: (context) => MyPersonalApp()));
         }, icon: Icon(Icons.arrow_back_ios)),
         centerTitle: true,
         title: Text("Add Images"),

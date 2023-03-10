@@ -7,12 +7,12 @@ import 'image/mainimage.dart';
 
 
 
-class MyApp extends StatefulWidget {
+class MyPersonalApp extends StatefulWidget {
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<MyPersonalApp> createState() => _MyPersonalAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyPersonalAppState extends State<MyPersonalApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -247,7 +247,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => MyApp()));
+                              builder: (context) => MyPersonalApp()));
                     },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,

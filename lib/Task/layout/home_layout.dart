@@ -42,7 +42,7 @@ class HomeLayout extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => MyApp()));
+                        builder: (context) => MyPersonalApp()));
               }, icon: Icon(Icons.arrow_back_ios)),
               title: Text(cubit.titles[cubit.currentIndex]),
             ),

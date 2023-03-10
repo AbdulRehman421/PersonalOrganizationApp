@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:conditional_builder_null_safety/example/example.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_guide/homepage.dart';
 import 'package:flutter_complete_guide/main.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -27,7 +28,7 @@ class SplashScreen extends StatelessWidget {
                     ),
                     child: AnimatedTextKit(
                       onFinished: () {
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyApp()));
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyPersonalApp()));
                       },
                       isRepeatingAnimation: false,
                       animatedTexts: [

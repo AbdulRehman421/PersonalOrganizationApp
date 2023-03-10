@@ -48,7 +48,7 @@ class _FriendDbListState extends State<FriendDbList> {
         leading: IconButton(
           onPressed: () {
             Navigator.pushReplacement(
-                context, MaterialPageRoute(builder: (context) => MyApp()));
+                context, MaterialPageRoute(builder: (context) => MyPersonalApp()));
           },
           icon: const Icon(
             Icons.arrow_back_ios,
