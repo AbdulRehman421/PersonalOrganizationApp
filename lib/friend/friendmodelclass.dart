@@ -1,8 +1,8 @@
 class FriendModelClass {
-  int? id;
-   String? name;
-   int? age;
-   String? gender;
+   int? id;
+   String name;
+   int age;
+   String gender;
 
   FriendModelClass({
     this.id,
@@ -18,6 +18,6 @@ class FriendModelClass {
 
 
   Map<String, Object> toMap() {
-    return {'name': name!, 'age': age!, 'gender': gender!,};
+    return {'name': name, 'age': age, 'gender': gender,};
   }
 }

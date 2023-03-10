@@ -3,6 +3,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../homepage.dart';
+import '../main.dart';
+
 void main() {
   runApp(k());
 }
@@ -16,33 +19,43 @@ class _kState extends State<k> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MyApp(),
+      home: MyImageApp(),
     );
   }
 }
 
-class MyApp extends StatefulWidget {
+class MyImageApp extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  _MyImageAppState createState() => _MyImageAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyImageAppState extends State<MyImageApp> {
   File? file;
   ImagePicker image = ImagePicker();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("WebFun"),
+        leading: IconButton(onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => MyApp()));
+        }, icon: Icon(Icons.arrow_back_ios)),
+        centerTitle: true,
+        title: Text("Add Images"),
       ),
       body: Center(
-        child: Column(
+        child:
+        Column(
           children: [
             Container(
-              height: 140,
-              width: 180,
+              height: 350,
+              width: 200,
+              margin: EdgeInsets.only(top: 30),
               color: Colors.black12,
               child: file == null
+
                   ? Icon(
                 Icons.image,
                 size: 50,
@@ -52,9 +65,12 @@ class _MyAppState extends State<MyApp> {
                 fit: BoxFit.fill,
               ),
             ),
+            SizedBox(
+              height: 25,
+            ),
             MaterialButton(
               onPressed: () {
-                getgall();
+                getgallery();
               },
               color: Colors.blue[900],
               child: Text(
@@ -69,7 +85,7 @@ class _MyAppState extends State<MyApp> {
             ),
             MaterialButton(
               onPressed: () {
-                getcam();
+                getcamera();
               },
               color: Colors.blue[900],
               child: Text(
@@ -85,7 +101,7 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  getcam() async {
+  getcamera() async {
     // ignore: deprecated_member_use
     var img = await image.getImage(source: ImageSource.camera);
     setState(() {
@@ -93,7 +109,7 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  getgall() async {
+  getgallery() async {
     // ignore: deprecated_member_use
     var img = await image.getImage(source: ImageSource.gallery);
     setState(() {

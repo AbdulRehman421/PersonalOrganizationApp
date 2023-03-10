@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_complete_guide/friends/addfriend.dart';
 import 'package:flutter_complete_guide/main.dart';
+import '../homepage.dart';
+import 'addfriend.dart';
 import 'friendDatabase.dart';
 import 'friendmodelclass.dart';
 
@@ -11,12 +12,9 @@ class FriendDbList extends StatefulWidget {
 }
 
 class _FriendDbListState extends State<FriendDbList> {
-  // final _titleController = TextEditingController();
-  // final _amountController = TextEditingController();
 
   late Future<List<FriendModelClass>> friendList;
   late DBHelper dbHelper;
-  String selectGender = 'male';
 
   @override
   void initState() {
@@ -39,10 +37,10 @@ class _FriendDbListState extends State<FriendDbList> {
     print("List $friendList");
     print("List ${dbHelper.getCartListWithUserId()}");
     return Scaffold(
-      backgroundColor: Colors.purple.shade50,
+      backgroundColor: Colors.blue.shade50,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.purple.withOpacity(0.8),
+        // backgroundColor: Colors.blue.withOpacity(0.8),
         title: const Text(
           "Friends List",
           style: TextStyle(fontWeight: FontWeight.bold),
@@ -92,7 +90,7 @@ class _FriendDbListState extends State<FriendDbList> {
                               ),
                             ),
                             title: Text(
-                              "Name :  ${snapshot.data![index].name.toString()}",
+                              snapshot.data![index].name.toString(),
                               style: const TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 17
                               ),
@@ -113,12 +111,11 @@ class _FriendDbListState extends State<FriendDbList> {
                               color: Theme.of(context).colorScheme.error,
                               onPressed: () {
                                 setState(() {
-                                  dbHelper?.delete(
+                                  dbHelper.delete(
                                       snapshot
                                           .data![
                                       index]
                                           .id!);
-                                  // For Refreshing List
                                   friendList =
                                       dbHelper
                                           .getCartListWithUserId();
@@ -153,14 +150,16 @@ class _FriendDbListState extends State<FriendDbList> {
           )
         ],
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(onPressed: () {
         Navigator.push(
             context,
             MaterialPageRoute(
                 builder: (context) => NewFriend()));
       },
-      child: Icon(Icons.add),
+      child: Icon(Icons.add),backgroundColor: Colors.blue,
       ),
+
     );
   }
 }

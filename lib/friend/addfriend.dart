@@ -2,6 +2,7 @@ import 'dart:core';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import '../homepage.dart';
 import '../main.dart';
 import 'friendDatabase.dart';
 import 'friendmodelclass.dart';
@@ -61,10 +62,10 @@ class _NewFriendState extends State<NewFriend> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:Colors.purple.shade50,
+      backgroundColor:Colors.blue.shade50,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.purple.withOpacity(0.8),
+        backgroundColor: Colors.blue.withOpacity(0.8),
         title: const Text(
           "Add New Friend",
           style: TextStyle(fontWeight: FontWeight.bold),
@@ -147,7 +148,7 @@ class _NewFriendState extends State<NewFriend> {
                                       selectGender = value.toString();
                                     });
                                   },
-                                  activeColor: Colors.redAccent,
+                                  activeColor: Colors.blue,
                                 ),
                                 title: const Text('Female'),
                               ),
@@ -155,9 +156,14 @@ class _NewFriendState extends State<NewFriend> {
                               Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 40.0),
                                 child: MaterialButton(
-                                  color: Colors.redAccent,
+                                  color: Colors.blue,
                                   onPressed: (){
                                     _validation();
+                                   Navigator.push(context,MaterialPageRoute(builder: (context) => MyApp()));
+                                    // Navigator.push(
+                                    //     context,
+                                    //     MaterialPageRoute(
+                                    //         builder: (context) => FriendDbList()));
                                   },
                                   shape: const StadiumBorder(),
                                   child: const Text("Add Friend", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
